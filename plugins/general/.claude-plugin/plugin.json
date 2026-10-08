@@ -1,0 +1,8 @@
+{
+  "name": "general",
+  "description": "Agentes generales para cualquier proyecto y lenguaje: revisión de código y depuración.",
+  "version": "0.1.0",
+  "author": { "name": "freddysae0" },
+  "repository": "https://github.com/freddysae0/co-creators",
+  "license": "MIT"
+}

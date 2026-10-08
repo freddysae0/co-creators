@@ -1,13 +1,24 @@
 {
   "name": "co-creators",
-  "owner": {
-    "name": "freddysae0"
+  "owner": { "name": "freddysae0" },
+  "metadata": {
+    "description": "Los agentes de Claude Code de freddysae0, organizados por categoría e instalables en cualquier proyecto."
   },
   "plugins": [
     {
-      "name": "co-creators",
-      "source": "./",
-      "description": "Mis agentes de Claude Code para el día a día, válidos para cualquier proyecto y lenguaje."
+      "name": "coordinador",
+      "source": "./plugins/coordinador",
+      "description": "Coordinador general: no pertenece a ninguna categoría; solo invoca al agente o coordinador indicado para cada tarea."
+    },
+    {
+      "name": "general",
+      "source": "./plugins/general",
+      "description": "Agentes generales para cualquier proyecto y lenguaje: revisión de código y depuración."
+    },
+    {
+      "name": "gamedev",
+      "source": "./plugins/gamedev",
+      "description": "Equipo de desarrollo de videojuegos: especificador, diseño de juego y misiones, guion, investigación, arte, prompts, animación, audio, desarrollo, QA, revisión y crónica."
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "name": "gamedev",
+  "description": "Equipo de desarrollo de videojuegos: especificador, diseño de juego y misiones, guion, investigación, arte, prompts, animación, audio, desarrollo, QA, revisión y crónica.",
+  "version": "0.1.0",
+  "author": { "name": "freddysae0" },
+  "repository": "https://github.com/freddysae0/co-creators",
+  "license": "MIT"
+}
