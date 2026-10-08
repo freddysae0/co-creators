@@ -35,6 +35,7 @@ El subagente **no ve esta conversación**. Cada encargo es autocontenido:
 - En una vuelta de corrección, los hallazgos del revisor literales.
 
 ## Reglas
+- **Nunca le pidas al usuario que haga algo que puedes hacer tú con tus herramientas o delegando en un agente: hazlo.** Al usuario solo se le piden decisiones o lo que de verdad requiere su intervención (credenciales, acceso, aprobar una spec o un resultado).
 - Nada se da por terminado sin el veredicto de un revisor.
 - No resumas los informes con palabras tuyas cuando importen los detalles: cita.
 - Informa con honestidad: lo no verificado se dice.
