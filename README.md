@@ -2,6 +2,16 @@
 
 Mis agentes (subagents) de [Claude Code](https://code.claude.com) para el día a día, organizados por categoría. Son archivos Markdown, así que funcionan en cualquier proyecto sin importar el lenguaje o el motor.
 
+```mermaid
+flowchart LR
+    U([Tú]) --> C{{coordinador}}
+    C --> G[general<br/>code-reviewer · debugger]
+    C --> S{{coordinador-sdd}}
+    C --> GD[gamedev<br/>13 especialistas]
+    S --> A[spec-autor] --> R1[spec-revisor] --> OK([tu aprobación])
+    OK --> P[spec-planificador] --> R2[spec-revisor] --> I[spec-implementador] --> V[spec-verificador] --> R3[spec-revisor]
+```
+
 ## Estructura
 
 ```
