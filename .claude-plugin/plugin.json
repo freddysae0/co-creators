@@ -1,0 +1,10 @@
+{
+  "name": "freddy-agents",
+  "description": "Mis agentes de Claude Code para el día a día, válidos para cualquier proyecto y lenguaje.",
+  "version": "0.1.0",
+  "author": {
+    "name": "freddysae0"
+  },
+  "repository": "https://github.com/freddysae0/claude-agents",
+  "license": "MIT"
+}

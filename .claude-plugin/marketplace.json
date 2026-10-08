@@ -1,0 +1,13 @@
+{
+  "name": "freddy-agents",
+  "owner": {
+    "name": "freddysae0"
+  },
+  "plugins": [
+    {
+      "name": "freddy-agents",
+      "source": "./",
+      "description": "Mis agentes de Claude Code para el día a día, válidos para cualquier proyecto y lenguaje."
+    }
+  ]
+}
