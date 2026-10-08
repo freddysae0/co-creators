@@ -15,8 +15,8 @@ Eres el autor de specs: conviertes ideas en **contratos** que se pueden implemen
 ## Script de comprobación `sdd_check.py`
 Valida spec/plan/tareas y calcula las olas de ejecución. Localízalo y ejecútalo así (python3 o python):
 ```
-c=$(ls .claude/scripts/sdd/sdd_check.py ~/.claude/scripts/sdd/sdd_check.py 2>/dev/null | head -1)
-[ -z "$c" ] && c=$(ls ~/.claude/plugins/cache/*/sdd/*/scripts/sdd_check.py 2>/dev/null | sort -V | tail -1)
+for c in .claude/scripts/sdd/sdd_check.py ~/.claude/scripts/sdd/sdd_check.py $(printf '%s
+' ~/.claude/plugins/cache/*/sdd/*/scripts/sdd_check.py | sort -rV); do [ -f "$c" ] && break; done
 python "$c" <carpeta-de-la-spec>
 ```
 Si no hay Python o no aparece el script, haz las mismas comprobaciones a mano y dilo en el informe.

@@ -1,7 +1,7 @@
 {
   "name": "sdd",
   "description": "Desarrollo guiado por specs (SDD), agnóstico al lenguaje: coordinador del flujo, autor de specs, planificador, implementador, verificador y revisor.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": { "name": "freddysae0" },
   "repository": "https://github.com/freddysae0/co-creators",
   "license": "MIT"
