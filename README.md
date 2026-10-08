@@ -29,7 +29,9 @@ Cada carpeta de `plugins/` es un plugin de Claude Code con sus agentes en `agent
 
 ### sdd
 
-Set básico para **desarrollo guiado por specs** en cualquier lenguaje. Cada cambio vive en `specs/NNN-<slug>/` con `spec.md` (requisitos EARS + criterios de aceptación `[AUTO]/[MANUAL]/[USUARIO]`), `plan.md` y `tareas.md`. Sin spec aprobada no se implementa.
+Set básico para **desarrollo guiado por specs** en cualquier lenguaje. Cada cambio vive en `<carpeta>/NNN-<slug>/` con `spec.md` (requisitos EARS + criterios de aceptación `[AUTO]/[MANUAL]/[USUARIO]`), `plan.md` y `tareas.md`. Sin spec aprobada no se implementa.
+
+**Dónde se guardan las specs:** si el repo ya tiene SDD configurado (lo dice su `CLAUDE.md` / `AGENTS.md` o ya tiene una carpeta como `specs/`), se usa esa. Si no, en `.sdd/`, **fuera de Git**: los agentes crean `.sdd/.gitignore` con `*`, así que se ignora sola sin tocar el `.gitignore` del proyecto.
 
 | Agente | Fase | Para qué |
 | --- | --- | --- |
