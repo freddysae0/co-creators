@@ -17,10 +17,10 @@ Dentro de Claude Code, en cualquier proyecto:
 
 ```
 /plugin marketplace add freddysae0/co-creators
-/plugin install co-creators@freddysae0
+/plugin install co-creators@co-creators
 ```
 
-Para traer los últimos cambios: `/plugin marketplace update freddysae0`.
+Para traer los últimos cambios: `/plugin marketplace update co-creators`.
 
 ### Opción 2: copiar los archivos al proyecto
 
