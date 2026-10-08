@@ -1,4 +1,4 @@
-# claude-agents
+# co-creators
 
 Mis agentes (subagents) de [Claude Code](https://code.claude.com) para el día a día. Son archivos Markdown, así que funcionan en cualquier proyecto sin importar el lenguaje.
 
@@ -16,11 +16,11 @@ Mis agentes (subagents) de [Claude Code](https://code.claude.com) para el día a
 Dentro de Claude Code, en cualquier proyecto:
 
 ```
-/plugin marketplace add freddysae0/claude-agents
-/plugin install freddy-agents@freddy-agents
+/plugin marketplace add freddysae0/co-creators
+/plugin install co-creators@co-creators
 ```
 
-Para traer los últimos cambios: `/plugin marketplace update freddy-agents`.
+Para traer los últimos cambios: `/plugin marketplace update co-creators`.
 
 ### Opción 2: copiar los archivos al proyecto
 
@@ -30,20 +30,20 @@ Para traer los últimos cambios: `/plugin marketplace update freddy-agents`.
 
 ```bash
 # todos los agentes en el proyecto actual
-curl -fsSL https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/freddysae0/co-creators/main/install.sh | bash
 
 # solo algunos / globalmente / listar
-curl -fsSL https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.sh | bash -s -- code-reviewer
-curl -fsSL https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.sh | bash -s -- --global
-curl -fsSL https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.sh | bash -s -- --list
+curl -fsSL https://raw.githubusercontent.com/freddysae0/co-creators/main/install.sh | bash -s -- code-reviewer
+curl -fsSL https://raw.githubusercontent.com/freddysae0/co-creators/main/install.sh | bash -s -- --global
+curl -fsSL https://raw.githubusercontent.com/freddysae0/co-creators/main/install.sh | bash -s -- --list
 ```
 
 **Windows (PowerShell)**
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.ps1)))
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.ps1))) code-reviewer
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.ps1))) -Global
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/co-creators/main/install.ps1)))
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/co-creators/main/install.ps1))) code-reviewer
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/co-creators/main/install.ps1))) -Global
 ```
 
 Los archivos que ya existen con cambios locales no se sobrescriben salvo que pases `--force` / `-Force`.

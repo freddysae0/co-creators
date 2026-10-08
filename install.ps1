@@ -7,7 +7,7 @@
 #   .\install.ps1 -List                   # lista los agentes disponibles
 #
 # Remoto (sin clonar):
-#   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.ps1))) [opciones]
+#   & ([scriptblock]::Create((irm https://raw.githubusercontent.com/freddysae0/co-creators/main/install.ps1))) [opciones]
 [CmdletBinding()]
 param(
     [Parameter(ValueFromRemainingArguments = $true)]
@@ -18,7 +18,7 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$repoUrl = if ($env:CLAUDE_AGENTS_REPO) { $env:CLAUDE_AGENTS_REPO } else { 'https://github.com/freddysae0/claude-agents.git' }
+$repoUrl = if ($env:CLAUDE_AGENTS_REPO) { $env:CLAUDE_AGENTS_REPO } else { 'https://github.com/freddysae0/co-creators.git' }
 
 $target = if ($Global) { Join-Path $HOME '.claude\agents' } else { Join-Path (Get-Location) '.claude\agents' }
 

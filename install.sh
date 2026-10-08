@@ -8,10 +8,10 @@
 #   ./install.sh --list               # lista los agentes disponibles
 #
 # Remoto (sin clonar):
-#   curl -fsSL https://raw.githubusercontent.com/freddysae0/claude-agents/main/install.sh | bash -s -- [opciones]
+#   curl -fsSL https://raw.githubusercontent.com/freddysae0/co-creators/main/install.sh | bash -s -- [opciones]
 set -euo pipefail
 
-REPO_URL="${CLAUDE_AGENTS_REPO:-https://github.com/freddysae0/claude-agents.git}"
+REPO_URL="${CLAUDE_AGENTS_REPO:-https://github.com/freddysae0/co-creators.git}"
 
 target="$PWD/.claude/agents"
 list=0
