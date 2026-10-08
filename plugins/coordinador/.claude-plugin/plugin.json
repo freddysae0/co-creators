@@ -1,7 +1,7 @@
 {
   "name": "coordinador",
   "description": "Coordinador general: no pertenece a ninguna categoría; solo invoca al agente o coordinador indicado para cada tarea.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": { "name": "freddysae0" },
   "repository": "https://github.com/freddysae0/co-creators",
   "license": "MIT"
