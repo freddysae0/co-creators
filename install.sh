@@ -84,3 +84,15 @@ for file in "${files[@]}"; do
   cp "$file" "$dest"
   echo "✓ $name → $dest"
 done
+
+# Scripts de apoyo de cada categoría instalada (p. ej. sdd_check.py) → .claude/scripts/<categoria>/
+copied=" "
+for file in "${files[@]}"; do
+  cat_dir="$(dirname "$(dirname "$file")")"
+  [[ -d "$cat_dir/scripts" ]] || continue
+  dest_dir="$(dirname "$target")/scripts/$(basename "$cat_dir")"
+  mkdir -p "$dest_dir"
+  cp "$cat_dir/scripts/"* "$dest_dir/"
+  [[ "$copied" == *" $dest_dir "* ]] || echo "✓ scripts → $dest_dir"
+  copied+=" $dest_dir "
+done

@@ -82,6 +82,17 @@ try {
         Copy-Item $file.FullName $dest -Force
         "+ $name -> $dest"
     }
+
+    # Scripts de apoyo de cada categoria instalada (p. ej. sdd_check.py) -> .claude/scripts/<categoria>/
+    $catDirs = $files | ForEach-Object { $_.Directory.Parent } | Sort-Object FullName -Unique
+    foreach ($cat in $catDirs) {
+        $scripts = Join-Path $cat.FullName 'scripts'
+        if (-not (Test-Path $scripts)) { continue }
+        $destDir = Join-Path (Split-Path $target -Parent) "scripts\$($cat.Name)"
+        New-Item -ItemType Directory -Force $destDir | Out-Null
+        Copy-Item (Join-Path $scripts '*') $destDir -Force
+        "+ scripts -> $destDir"
+    }
 } finally {
     if ($tmp) { Remove-Item -Recurse -Force $tmp -ErrorAction SilentlyContinue }
 }

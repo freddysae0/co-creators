@@ -42,7 +42,14 @@ Set básico para **desarrollo guiado por specs** en cualquier lenguaje. Cada cam
 | [`spec-verificador`](plugins/sdd/agents/spec-verificador.md) | verificar | Ejecuta y aporta evidencia AC a AC (matriz de trazabilidad) |
 | [`spec-revisor`](plugins/sdd/agents/spec-revisor.md) | revisar | Veredicto sobre spec, plan o implementación. Solo lectura |
 
-Flujo: especificar → aclarar con el usuario → revisar spec → **aprobación del usuario** → planificar → revisar plan → implementar tarea a tarea → verificar → revisar → aceptación.
+Flujo: especificar → aclarar con el usuario → revisar spec → **aprobación del usuario** → explorar el código en paralelo → planificar → revisar plan → implementar por olas → verificar → revisar → aceptación → aprendizaje.
+
+Cómo planifican:
+- **Exploran antes de planificar:** el coordinador lanza varios agentes `Explore` en paralelo (zonas afectadas, convenciones y tests, dependencias, código reutilizable) y el planificador parte de sus hallazgos.
+- **Comparan alternativas:** el plan compara 2–3 enfoques con criterios explícitos y justifica la decisión.
+- **Tareas en grafo:** cada tarea es una porción vertical que entrega un criterio de aceptación completo, declara sus archivos y dependencias, y lo incierto se resuelve primero con una tarea `spike`. Las tareas de una misma ola se implementan **en paralelo**, cada una en su git worktree, y después se integran.
+- **[`sdd_check.py`](plugins/sdd/scripts/sdd_check.py)** valida la spec, el plan y las tareas (cobertura REQ → AC → tarea, dependencias sin ciclos, archivos compartidos dentro de una ola…) y calcula las olas. Solo necesita Python.
+- **Aprenden:** al cerrar cada spec, el planificador añade lo que falló del plan a `APRENDIZAJES.md`, y lo lee antes de planificar la siguiente.
 
 ### gamedev
 
