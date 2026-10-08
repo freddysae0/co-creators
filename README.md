@@ -3,7 +3,7 @@
 Mis agentes (subagents) de [Claude Code](https://code.claude.com) para el día a día, organizados por categoría. Son archivos Markdown, así que funcionan en cualquier proyecto sin importar el lenguaje o el motor.
 
 ```mermaid
-flowchart LR
+flowchart TD
     U([Tú]) --> C{{coordinador}}
     C --> G[general<br/>code-reviewer · debugger]
     C --> S{{coordinador-sdd}}
