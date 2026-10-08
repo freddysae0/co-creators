@@ -8,6 +8,7 @@ Mis agentes (subagents) de [Claude Code](https://code.claude.com) para el día a
 plugins/
   coordinador/   ← no pertenece a ninguna categoría: solo coordina e invoca a otros
   general/       ← cualquier proyecto
+  sdd/           ← desarrollo guiado por specs, agnóstico al lenguaje
   gamedev/       ← desarrollo de videojuegos
 ```
 
@@ -25,6 +26,21 @@ Cada carpeta de `plugins/` es un plugin de Claude Code con sus agentes en `agent
 | --- | --- |
 | [`code-reviewer`](plugins/general/agents/code-reviewer.md) | Revisa el `git diff` buscando bugs, seguridad y mantenibilidad |
 | [`debugger`](plugins/general/agents/debugger.md) | Encuentra la causa raíz de errores y tests rotos |
+
+### sdd
+
+Set básico para **desarrollo guiado por specs** en cualquier lenguaje. Cada cambio vive en `specs/NNN-<slug>/` con `spec.md` (requisitos EARS + criterios de aceptación `[AUTO]/[MANUAL]/[USUARIO]`), `plan.md` y `tareas.md`. Sin spec aprobada no se implementa.
+
+| Agente | Fase | Para qué |
+| --- | --- | --- |
+| [`coordinador-sdd`](plugins/sdd/agents/coordinador-sdd.md) | todas | Lleva el flujo de principio a fin; solo invoca a los `spec-*` |
+| [`spec-autor`](plugins/sdd/agents/spec-autor.md) | especificar | Escribe la spec contrato y las preguntas `[ACLARAR]` |
+| [`spec-planificador`](plugins/sdd/agents/spec-planificador.md) | planificar | `plan.md` + `tareas.md` pequeñas y verificables |
+| [`spec-implementador`](plugins/sdd/agents/spec-implementador.md) | implementar | Una tarea por encargo, test primero |
+| [`spec-verificador`](plugins/sdd/agents/spec-verificador.md) | verificar | Ejecuta y aporta evidencia AC a AC (matriz de trazabilidad) |
+| [`spec-revisor`](plugins/sdd/agents/spec-revisor.md) | revisar | Veredicto sobre spec, plan o implementación. Solo lectura |
+
+Flujo: especificar → aclarar con el usuario → revisar spec → **aprobación del usuario** → planificar → revisar plan → implementar tarea a tarea → verificar → revisar → aceptación.
 
 ### gamedev
 
@@ -57,6 +73,7 @@ Dentro de Claude Code, en cualquier proyecto:
 /plugin install coordinador@co-creators
 /plugin install gamedev@co-creators
 /plugin install general@co-creators
+/plugin install sdd@co-creators
 ```
 
 Instala solo las categorías que necesites. Instalados como plugin, los agentes se llaman `gamedev:revisor`, `general:debugger`, etc. Para traer los últimos cambios: `/plugin marketplace update co-creators`.
@@ -93,6 +110,8 @@ Un subagente no puede lanzar a otros subagentes, así que el coordinador tiene q
 claude --agent coordinador:coordinador   # instalado como plugin
 claude --agent coordinador               # instalado con los scripts
 ```
+
+Para SDD puedes arrancar directamente con su coordinador: `claude --agent sdd:coordinador-sdd`. El coordinador general también puede delegar en él: le devuelve el plan de la fase y lo ejecuta.
 
 O ponlo por defecto en el proyecto con `"agent": "coordinador:coordinador"` en `.claude/settings.json`. Si lo invocas como subagente, en lugar de trabajar devuelve un plan de delegación para que lo ejecute la sesión principal.
 

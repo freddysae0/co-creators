@@ -1,6 +1,8 @@
 {
   "name": "co-creators",
-  "owner": { "name": "freddysae0" },
+  "owner": {
+    "name": "freddysae0"
+  },
   "metadata": {
     "description": "Los agentes de Claude Code de freddysae0, organizados por categoría e instalables en cualquier proyecto."
   },
@@ -14,6 +16,11 @@
       "name": "general",
       "source": "./plugins/general",
       "description": "Agentes generales para cualquier proyecto y lenguaje: revisión de código y depuración."
+    },
+    {
+      "name": "sdd",
+      "source": "./plugins/sdd",
+      "description": "Desarrollo guiado por specs (SDD), agnóstico al lenguaje: coordinador del flujo, autor de specs, planificador, implementador, verificador y revisor."
     },
     {
       "name": "gamedev",
